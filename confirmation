@@ -1,0 +1,66 @@
+<html>
+<head>
+ <script language = "javascript"> </script>
+<script src="myscripts.js"></script>
+<script>
+var ql = url.searchParams.get("quantity");
+var md = url.searchParams.get("cars");
+console.log("selected : " + md);
+var id = new Date().getUTCMilliseconds();
+var newid= id.toString();
+for (var i = 0; i < car.length; i++) {
+  if ( car[i].name == md ){
+  var pr= car[i].price ;
+}}
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+   
+ga('create', 'UA-109042493-4', 'auto');
+ga ('require', 'ecommerce', 'ecommerce.js');
+ga ('ecommerce:addItem',{
+'id': newid,
+'name': md,
+'price': pr,
+'quantity': ql
+});
+ga ('ecommerce:send'); 
+ga('set', 'cd1', md);
+ga('send', 'pageview', { 'page': '/Confirmation.html' });
+</script>
+
+<title>Confirmation</title>
+
+</head>
+
+
+<body>
+<p id="demo"></p>
+
+
+ <script language = "javascript">
+  for (var i = 0; i < car.length; i++) {
+  if ( car[i].name == md ){
+var total = pr* ql;
+  console.log("selected : " + car[i].price);
+ document.getElementById("demo").innerHTML = "<br> Congratulations !</br>" + "<br /><br />" + " your transaction ID is"+ "" + id +"<br /><br />" + "Here is your confirmation:"+ "<br /><br />"
+ +"Product Name:  " + md +"<br /><br />"
+ +"Quantity:  " + " " + ql + "<br /><br />" 
++ " Price:"  + " " + "$" + car[i].price +  "<br /><br />" 
++"Total amount: " + "" + "$" +total ;
+}
+}
+
+  </script>
+ 
+
+
+
+
+
+  <noscript>
+ <p> You have JavaScript Turned off <p>
+ </noscript>
+ </body>
+ </html>
